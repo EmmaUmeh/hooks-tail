@@ -1,0 +1,26 @@
+# Binaries
+/bin/
+/hooks-tail
+
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+
+tmp/
+temp/
+
+coverage.out
+coverage.html
+
+.air.toml
+docker-compose.override.yml
