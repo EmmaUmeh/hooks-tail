@@ -11,11 +11,12 @@ func main() {
 	log.SetReportCaller(true)
 	var r *chi.Mux = chi.NewRouter()
 	handler.HandleRoutes(r)
+	database.InitialiseDb()
 
 	fmt.Println("Starting server on port 8080...")
 
 	err := http.ListenAndServe(":8080", r)
-	
+
 	if err != nil {
 		log.Fatal(err)
 	}
