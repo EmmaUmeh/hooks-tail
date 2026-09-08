@@ -39,6 +39,25 @@ func CreateWebhookHandler(c *gin.Context) {
 		webhookData,
 	)
 }
-func GetWebhookHandler(c *gin.Context) {
 
+func GetWebhookHandler(c *gin.Context) {
+ var webhooks []webhook.WebhookModel
+
+ if err := database.DB.Find(&webhooks).Error; err != nil {
+  ResponseJSON(
+   c,
+   http.StatusInternalServerError,
+   "Failed to retrieve webhooks",
+   nil,
+  )
+  return
+ }
+
+ ResponseJSON(
+  c,
+  http.StatusOK,
+  "Webhooks retrieved successfully",
+  webhooks,
+ )
+ 
 }
