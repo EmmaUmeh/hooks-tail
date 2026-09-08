@@ -1,18 +1,13 @@
-package handlers
+package handler
 
 import (
-	"github.com/go-chi/chi/v5"
 	"github.com/gin-gonic/gin"
-	"net/http"
-	"encoding/json"
-	chimiddleware "github.com/go-chi/chi/v5/middleware"
 )
 
+func CreateWebhookHandler(c *gin.Context) {
 
+}
 
-func HandleRoutes(r *chi.Mux) {
-	// global middleware
-	r.Use(chimiddleware.StripSlashes)
+func GetWebhookHandler(c *gin.Context) {
 
-	
 }
